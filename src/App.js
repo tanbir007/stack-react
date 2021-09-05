@@ -8,7 +8,7 @@ class App extends Component {
 
  
   me = {
-    name:"babu ahmed" ,
+    name:"babbbyrhrhtyrt" ,
     title:"Fullstack developer, fb ",
     code: "fullstack " 
 };
@@ -19,6 +19,7 @@ class App extends Component {
 
 
 state = {
+  name:"",
   count:0
 }
 
@@ -65,6 +66,34 @@ resetTimer =()=>{
   clearInterval(this.intervalId);
   this.intervalId=null;
 }
+handleButtonClick =(event)=>{
+
+console.log("handleButton",event.target)
+
+}
+handleChange=(event)=>{
+   this.setState({name:event.target.value})
+  console.log(event.target.value)
+}
+
+handleFocus=(event)=>{
+
+  console.log("i am focus")
+}
+
+
+handleBlur=(event)=>{
+
+    if (! this.state.name){
+      alert("please eneter name")
+    }
+    console.log("i am blur")
+
+}
+
+
+
+
   render() {
    
     return (
@@ -85,6 +114,31 @@ resetTimer =()=>{
           <button onClick={(this.stopTimer)} className="Btn">End</button>
           <button onClick={(this.resetTimer)} className="Btn">Reset</button>
         </div>
+
+        <div className="">
+        <button  onClick={(this.handleButtonClick)} className=""> Click me 
+        </button>
+
+
+        <br />
+
+        <input
+        type="text"
+         placeholder="Enter your name" 
+         className="" 
+         value={(this.state.name)}
+        onChange={(this.handleChange)}
+        onFocus={(this.handleFocus)}
+        onBlur={(this.handleBlur)}
+        ></input>
+<br />
+<br />
+        {this.state.name &&  <h3>Welcome, {(this.state.name)}</h3>}
+
+
+        </div>
+
+       
 
 
 
