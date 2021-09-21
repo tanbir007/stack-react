@@ -3,18 +3,26 @@ import React from 'react';
 
 
 
-const Props = (props) => {
+
+const Input = (props) => {
+
    
+  
 
     return (
        
-
+    
         <div>
-          
-          
+       
+    
+
+
+
+
+       
 
         </div>
     );
 };
 
-export default Props;
+export default Input;
